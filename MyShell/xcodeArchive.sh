@@ -2,18 +2,24 @@
 
 log_path="~/Desktop/Archives/log.txt"
 
-#xcodebuild -configuration ：Debug和Release两个
+Project_DIR="~/Desktop/RACDemo/"
+Log_path="~/Desktop/Archives/${archiveData}/log.txt"
+archiveDate=`(date +%Y-%m-%d-%T)`
+
 workspaceName="HHHH.xcworkspace"
-scheme="HHHH"
+scheme="RACDemo"
 
-configuration="Release" 
-archivePath="~/Desktop/Archives/"
+configuration="Release"
+archivePath="~/Desktop/Archives/${archiveData}/${scheme}"
 
-configurationBuildDir=""
 PROVISIONING_PROFILE=""
 CODE_SIGN_IDENTITY=""
 
-archiveData=`(date +%Y-%m-%d-%T)`
+projectExist=`ls ${Project_DIR} | grep scheme`
+if [ ]; then
+#statements
+fi
+
 
 #清空之前的编译
 echo "xcode clean" >> $log_path
