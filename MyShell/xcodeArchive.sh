@@ -29,6 +29,7 @@ xcodebuild clean -configuration $configuration -alltargets >> $log_path
 echo "archive" >> $log_path
 
 # archive workspace
-xcodebuild archive -workspace "$workspaceName" -scheme "$scheme" -configuration "$configuration" -exportFormat ipa -archivePath "$archivePath" # CODE_SIGN_IDENTITY="$codeSignIdentity" PROVISIONING_PROFILE="$provisioningProfile" >> $log_path
+#xcodebuild archive -workspace "$workspaceName" -scheme "$scheme" -configuration "$configuration" -exportFormat ipa -archivePath "$archivePath" # CODE_SIGN_IDENTITY="$codeSignIdentity" PROVISIONING_PROFILE="$provisioningProfile" >> $log_path
 
+#xcodebuild -exportArchive -archivePath ${archivePath}.xcarchive -exportPath ${EXPORT_PATH} -exportFormat ipa -exportProvisioningProfile ${PROFILE_NAME}
 # AppStore验证/或者上传至各个服务器

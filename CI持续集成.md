@@ -62,15 +62,18 @@
 	
 6. [Xcode 打包并发布脚本](https://www.jianshu.com/p/1229476fbce4)
 
+7. 用户权限操作失误
+	> `<authorizationStrategy class="hudson.security.FullControlOnceLoggedInAuthorizationStrategy"/>`
 
 ### Mac 下安装Tomcat
 1. 下载安装Tomcat [Apache Timcat下载地址](https://tomcat.apache.org/download-90.cgi)
 
 2. 解压 <br>
 
-	`tar jxvf FileName.tar.bz/FileName.tar.bz2`
-	
-	`tar xvf FileName.tar`
+	`tar -jxvf FileName.tar.bz/FileName.tar.bz2`
+	`tar -xzvf FileName.tar.gz`
+	`tar -xvf FileName.tar`
+    
 
 3. 运行bin下面的启动和关闭脚本
 
