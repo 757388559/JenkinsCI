@@ -71,7 +71,9 @@
 2. 解压 <br>
 
 	`tar -jxvf FileName.tar.bz/FileName.tar.bz2`
+	
 	`tar -xzvf FileName.tar.gz`
+	
 	`tar -xvf FileName.tar`
     
 
@@ -90,6 +92,20 @@
     		<user username="username" password="password" roles="manager-gui"/> 
     	
 		</tomcat-users>
+	- 403 Access Denied 问题
+	
+		> 首先在conf/tomcat-users.xml文件里面，在</tomcat-users>前面添		加如下代码：
+		
+		```
+		<role rolename="manager-gui"/>
+		<role rolename="admin-gui"/>
+		<user username="tomcat" password="111111" roles="manager-gui,admin-gui"/>
+		```
+		> 重启Tomcat，如果还有问题，那么就是访问的ip地受到了限制，
+我们打开/webapps/manager/META-INF/目录下context.xml文件，不是conf/目录下的context.xml文件，一定不要搞错了，添加下面的代码:
+
+		`<Valve className="org.apache.catalina.valves.RemoteAddrValve"
+         allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1|\d+\.\d+\.\d+\.\d+" />`
 	
 5. 数据源的配置
 	- 全局数据源：所有的web应用都可以访问
